@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 public class CustomerView extends JFrame {
     private Controller controller;
 
-    CustomerView(Controller c, String commandName){
+    CustomerView(Controller c, String roomName){
         //layout
         super("Customer Info");
         this.controller = c;
@@ -84,14 +84,13 @@ public class CustomerView extends JFrame {
                     String z = zipField.getText();
                     String q = nightsField.getText();
                     int n = 0;
-                    String commanName = commandName;
                     try {
                         n = Integer.parseInt(q);
                     }catch (NumberFormatException nfe){
                         n = 404;
                     }
 
-                    controller.setCustomer(f,l,p,a,c,s,z,n,commandName);
+                    controller.setCustomer(f,l,p,a,c,s,z,n,roomName);
                     setVisible(false);
 
             }
